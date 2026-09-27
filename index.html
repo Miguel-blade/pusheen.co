@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pusheen.com</title>
+    <link rel="stylesheet" href="pushin.css">
+    <!-- Fuente oficial redondeada -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- ENCABEZADO ESTILO OFICIAL -->
+    <header class="site-header">
+        <div class="header-top">
+            <!-- Espacio vacío a la izquierda para centrar el logo perfectamente -->
+            <div class="header-spacer"></div>
+            
+            <div class="logo-container">
+                <a href="#home">
+                    <img src="https://media.giphy.com/channel_assets/pusheen/7IDzUMUENs0h/200h.gif" alt="Pusheen Logo" class="logo-img">
+                </a>
+            </div>
+
+            <!-- NUEVA BARRA DE BÚSQUEDA -->
+            <div class="search-container">
+                <form class="search-form" action="#" method="GET">
+                    <input type="text" class="search-input" placeholder="Buscar peluches, tazas...">
+                    <button type="submit" class="search-btn" title="Buscar">🔍</button>
+                </form>
+            </div>
+        </div>
+
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#shop">Shop</a></li>
+                <li><a href="#comics">Comics</a></li>
+                <li><a href="#characters">Characters</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- CONTENEDOR PRINCIPAL -->
+    <main class="main-container">
+
+        <!-- BANNER DESTACADO (CARRUSEL) -->
+        <section class="featured-banner">
+            <div class="carousel">
+                <div class="carousel-slide">
+                    <img src="https://scontent.feoh6-1.fna.fbcdn.net/v/t39.30808-6/492081590_1210922253729962_54525431124319219_n.jpg?stp=dst-jpg_tt6&cstp=mx820x312&ctp=s820x312&_nc_cat=111&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=AOCV-raJtTYQ7kNvwEg_9me&_nc_oc=Adpm8i4liSgVa_3xu0dRtwk_bbUMR7AdixBaG3BPLE6kSOSL8ohBa3ATpgKEIDjTkHlAvCBmHnFN9Ki0wKqvuL6c&_nc_zt=23&_nc_ht=scontent.feoh6-1.fna&_nc_gid=KJN8Xvd599b3lzA8MT4EHA&_nc_ss=7b289&oh=00_AQJG8Bw1LIjC_YrZZTtsDEoP3KAIxdmtb9Mmnxj_wky8tg&oe=6ABA461E"
+                        alt="Pusheen Banner 1">
+                </div>
+                <div class="carousel-slide">
+                    <img src="img/pusheen banner.png" alt="Pusheen Banner 2">
+                </div>
+            </div>
+        </section>
+
+        <!-- CUADRÍCULA ESTILO FEED (SHOP / POSTS) -->
+        <section id="shop" class="feed-grid">
+
+            <!-- Tarjeta 1 -->
+            <article class="card">
+                <a href="#modal-1" class="card-link">
+                    <img src="https://pusheen.com/cdn/shop/files/Gray_Dreamsheen_Plush_01_web.jpg?v=1784306228&width=1445"
+                        alt="Peluche">
+                    <div class="card-content">
+                        <h2>Squisheen Log Plush</h2>
+                        <span class="tag pink">Shop</span>
+                    </div>
+                </a>
+            </article>
+
+            <!-- Tarjeta 2 -->
+            <article class="card">
+                <a href="#modal-2" class="card-link">
+                    <img src="https://pusheen.com/cdn/shop/files/PusheenILikeYouALatteMug_07_web.jpg?v=1786029684&width=1445"
+                        alt="Taza">
+                    <div class="card-content">
+                        <h2>Boba Tea Ceramic Mug</h2>
+                        <span class="tag pink">Shop</span>
+                    </div>
+                </a>
+            </article>
+
+            <!-- Tarjeta 3 (Diferente tamaño para romper monotonía) -->
+            <article class="card comic-card">
+                <a href="#modal-3" class="card-link">
+                    <img src="https://pusheen.com/cdn/shop/files/Pusheen_Backpack_000_web.jpg?v=1742494984&width=1445"
+                        alt="Mochila">
+                    <div class="card-content">
+                        <h2>Fruits Mini Backpack</h2>
+                        <span class="tag yellow">Accessories</span>
+                    </div>
+                </a>
+            </article>
+
+            <!-- Tarjeta 4 -->
+            <article class="card">
+                <a href="#modal-4" class="card-link">
+                    <img src="https://pusheen.com/cdn/shop/files/BigMochiPumpkinPlush_18_web.jpg?v=1788466110&width=1445"
+                        alt="Halloween">
+                    <div class="card-content">
+                        <h2>Halloween Exclusive</h2>
+                        <span class="tag pink">Shop</span>
+                    </div>
+                </a>
+            </article>
+
+
+
+
+             <article class="card">
+                <a href="#modal-5" class="card-link">
+                    <img src="https://pusheen.com/cdn/shop/files/Devils_Food_Cake_Pusheen_Unisex_Tee_003_web.jpg?v=1693950595&width=1445"
+                        alt="Halloween">
+                    <div class="card-content">
+                        <h2>Halloween Exclusive</h2>
+                        <span class="tag pink">Shop</span>
+                    </div>
+                </a>
+            </article>
+
+             <article class="card">
+                <a href="#modal-6" class="card-link">
+                    <img src="https://pusheen.com/cdn/shop/files/Devils_Food_Cake_Pusheen_Plush_009_web.jpg?v=1694032517&width=1445"
+                        alt="Halloween">
+                    <div class="card-content">
+                        <h2>Halloween Exclusive</h2>
+                        <span class="tag pink">Shop</span>
+                    </div>
+                </a>
+            </article> 
+        </section>
+    </main>
+
+    <!-- FOOTER ESTILO OFICIAL (Versión Completa) -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <!-- Columna 1: Newsletter -->
+            <div class="footer-col newsletter">
+                <h3>¡Únete a la familia!</h3>
+                <p>Suscríbete para recibir noticias, cómics exclusivos y ofertas miau-ravillosas antes que nadie.</p>
+                <form class="subscribe-form">
+                    <input type="email" placeholder="Tu correo electrónico" required>
+                    <button type="button" class="btn-subscribe">Suscribirse</button>
+                </form>
+            </div>
+
+            <!-- Columna 2: Tienda -->
+            <div class="footer-col links">
+                <h3>Shop</h3>
+                <ul>
+                    <li><a href="#">Peluches</a></li>
+                    <li><a href="#">Ropa y Accesorios</a></li>
+                    <li><a href="#">Hogar y Oficina</a></li>
+                    <li><a href="#">Coleccionables</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna 3: Soporte -->
+            <div class="footer-col links">
+                <h3>Soporte</h3>
+                <ul>
+                    <li><a href="#">Preguntas Frecuentes</a></li>
+                    <li><a href="#">Envíos y Devoluciones</a></li>
+                    <li><a href="#">Contacto</a></li>
+                    <li><a href="#">Políticas de Privacidad</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna 4: Redes Sociales -->
+            <div class="footer-col social">
+                <h3>Síguenos</h3>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/pusheen/" class="icon" title="Instagram">📷</a>
+                    <a href="https://x.com/Pusheen" class="icon" title="Twitter">🐦</a>
+                    <a href="https://www.facebook.com/Pusheen/" class="icon" title="Facebook">📘</a>
+                    <a href="#" class="icon" title="TikTok">🎵</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Pusheen Corp. Todos los derechos reservados. Diseñado por tu Programador Estrella.</p>
+        </div>
+    </footer>
+
+    <!-- =========================================
+         MODALES DE PRODUCTOS (Efecto Zoom)
+    ========================================= -->
+
+    <div id="modal-1" class="modal">
+        <div class="modal-content">
+            <a href="#shop" class="close-btn">&times;</a>
+            <img src="https://pusheen.com/cdn/shop/files/Gray_Dreamsheen_Plush_01_web.jpg?v=1784306228&width=1445"
+                alt="Peluche">
+            <div class="modal-info">
+                <h3>Squisheen Log Plush</h3>
+                <p class="price">$29.99</p>
+                <p class="desc">El peluche oficial súper elástico y suave. ¡Perfecto para aplastar y abrazar!</p>
+                <button class="btn-buy">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-2" class="modal">
+        <div class="modal-content">
+            <a href="#shop" class="close-btn">&times;</a>
+            <img src="https://pusheen.com/cdn/shop/files/PusheenILikeYouALatteMug_07_web.jpg?v=1786029684&width=1445"
+                alt="Taza">
+            <div class="modal-info">
+                <h3>Boba Tea Ceramic Mug</h3>
+                <p class="price">$15.50</p>
+                <p class="desc">Taza de cerámica oficial para tus bebidas favoritas y tés de burbujas.</p>
+                <button class="btn-buy">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modales 3 y 4 (Estructura idéntica, abreviados para no saturar) -->
+    <div id="modal-3" class="modal">
+        <div class="modal-content"><a href="#shop" class="close-btn">&times;</a><img
+                src="https://pusheen.com/cdn/shop/files/Pusheen_Backpack_000_web.jpg?v=1742494984&width=1445"
+                alt="Mochila">
+            <div class="modal-info">
+                <h3>Fruits Mini Backpack</h3>
+                <p class="price">$45.00</p>
+                <p class="desc">Mochila oficial con patrón de frutas.</p><button class="btn-buy">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-4" class="modal">
+        <div class="modal-content"><a href="#shop" class="close-btn">&times;</a><img
+                src="https://pusheen.com/cdn/shop/files/BigMochiPumpkinPlush_18_web.jpg?v=1788466110&width=1445"
+                alt="Halloween">
+            <div class="modal-info">
+                <h3>Halloween Exclusive</h3>
+                <p class="price">$35.00</p>
+                <p class="desc">Edición limitada de Halloween.</p><button class="btn-buy">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

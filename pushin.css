@@ -1,0 +1,414 @@
+
+:root {
+    --mint-bg: #c5ebe3;         /* El clásico verde menta de fondo */
+    --white-card: #ffffff;      /* Blanco puro para contenedores */
+    --text-brown: #665b59;      /* Marrón grisáceo para textos */
+    --pink-tag: #f7b4c6;        /* Rosa pastel para botones/etiquetas */
+    --yellow-tag: #fbe083;      /* Amarillo pastel */
+    --border-rad: 20px;         
+    --shadow: 0 5px 15px rgba(102, 91, 89, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: var(--mint-bg);
+    color: var(--text-brown);
+    /* Patrón sutil opcional, la web original a veces lo usa */
+    background-image: radial-gradient(rgba(255,255,255,0.3) 2px, transparent 2px);
+    background-size: 30px 30px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* =========================================
+   ENCABEZADO (Logo arriba, menú abajo)
+========================================= */
+.site-header {
+    background-color: var(--white-card);
+    text-align: center;
+    padding: 20px 0 0 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: relative;
+    z-index: 100;
+}
+
+/* =========================================
+   ESTILOS PARA EL LOGO CON GIF ANIMADO
+========================================= */
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.logo-img {
+    height: 80px;
+    width: auto;
+    display: block;
+
+    border-radius: 30px; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.logo-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(102, 91, 89, 0.15);
+}
+
+.main-nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 40px;
+    padding: 15px 0;
+}
+
+.main-nav a {
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+.main-nav a:hover {
+    color: var(--pink-tag);
+}
+
+/* =========================================
+   CONTENEDOR PRINCIPAL Y CARRUSEL
+========================================= */
+.main-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.featured-banner {
+    background-color: var(--white-card);
+    border-radius: var(--border-rad);
+    padding: 20px;
+    margin-bottom: 40px;
+    box-shadow: var(--shadow);
+}
+
+/* Carrusel de CSS Puro */
+.carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    border-radius: 15px;
+}
+
+.carousel::-webkit-scrollbar { display: none; }
+.carousel { -ms-overflow-style: none; scrollbar-width: none; }
+
+.carousel-slide {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* =========================================
+   GRID ESTILO "FEED" OFICIAL
+========================================= */
+.feed-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background-color: var(--white-card);
+    border-radius: var(--border-rad);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-bottom: 2px solid var(--mint-bg);
+}
+
+.card-content {
+    padding: 20px;
+    text-align: center;
+}
+
+.card-content h2 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+/* Etiquetas coloridas (Pills) */
+.tag {
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text-brown);
+}
+.tag.pink { background-color: var(--pink-tag); }
+.tag.yellow { background-color: var(--yellow-tag); }
+
+
+.modal {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(102, 91, 89, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 2000;
+}
+
+.modal:target {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background-color: var(--mint-bg);
+    padding: 10px;
+    border-radius: var(--border-rad);
+    width: 90%;
+    max-width: 800px;
+    display: flex;
+    gap: 0;
+    position: relative;
+    transform: scale(0.8);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.modal:target .modal-content {
+    transform: scale(1); 
+}
+
+.close-btn {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    background-color: var(--white-card);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    z-index: 10;
+}
+
+.modal-content img {
+    width: 50%;
+    border-radius: 15px 0 0 15px;
+    object-fit: cover;
+    background-color: var(--white-card);
+}
+
+.modal-info {
+    background-color: var(--white-card);
+    padding: 40px;
+    border-radius: 15px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.modal-info h3 { font-size: 2rem; margin-bottom: 10px; }
+.modal-info .price { font-size: 1.5rem; color: var(--pink-tag); font-weight: 900; margin-bottom: 15px; }
+.modal-info .desc { font-size: 1.1rem; margin-bottom: 25px; line-height: 1.5; }
+
+.btn-buy {
+    background-color: var(--pink-tag);
+    color: var(--text-brown);
+    border: none;
+    padding: 15px;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-buy:hover { background-color: #f39db4; }
+
+
+  /* FOOTER OFICIAL (Versión Completa) */
+
+.site-footer {
+    background-color: var(--white-card);
+    color: var(--text-brown);
+    padding: 60px 20px 20px;
+    margin-top: 60px;
+    box-shadow: 0 -5px 15px rgba(102, 91, 89, 0.05); 
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 40px;
+    padding-bottom: 40px;
+    border-bottom: 2px solid var(--mint-bg);
+}
+
+.footer-col h3 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: var(--text-brown);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+.newsletter p {
+    margin-bottom: 15px;
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+.subscribe-form {
+    display: flex;
+    gap: 10px;
+}
+
+.subscribe-form input {
+    flex: 1;
+    padding: 12px 15px;
+    border: 2px solid var(--mint-bg);
+    border-radius: 25px;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.subscribe-form input:focus {
+    border-color: var(--pink-tag);
+}
+
+.btn-subscribe {
+    background-color: var(--pink-tag);
+    color: var(--text-brown);
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-weight: 700;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-subscribe:hover {
+    background-color: #f39db4;
+}
+
+
+.links ul {
+    list-style: none;
+}
+
+.links ul li {
+    margin-bottom: 12px;
+}
+
+.links ul li a {
+    color: var(--text-brown);
+    font-weight: 500;
+    transition: color 0.3s, padding-left 0.3s;
+}
+
+.links ul li a:hover {
+    color: var(--pink-tag);
+    padding-left: 5px; 
+}
+
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.icon {
+    background-color: var(--mint-bg);
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.icon:hover {
+    background-color: var(--yellow-tag);
+    transform: translateY(-5px);
+}
+
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 25px;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+    .main-nav ul {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+    .modal-content {
+        flex-direction: column;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+    .modal-content img, .modal-info {
+        width: 100%;
+        border-radius: 15px;
+    }
+    .modal-content img {
+        border-radius: 15px 15px 0 0;
+    }
+    .modal-info {
+        border-radius: 0 0 15px 15px;
+    }
+}
