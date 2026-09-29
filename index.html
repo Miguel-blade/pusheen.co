@@ -138,13 +138,23 @@
         <div class="footer-container">
             
             <div class="footer-col newsletter">
-                <h3>¡Únete a la familia!</h3>
-                <p>Suscríbete para recibir noticias, cómics exclusivos y ofertas miau-ravillosas antes que nadie.</p>
-                <form class="subscribe-form">
-                    <input type="email" placeholder="Tu correo electrónico" required>
-                    <button type="button" class="btn-subscribe">Suscribirse</button>
-                </form>
-            </div>
+    <h3>¡Únete a la familia!</h3>
+    <p>Suscríbete para recibir noticias, cómics exclusivos y ofertas miau-ravillosas antes que nadie.</p>
+
+    <!-- 1. Agregamos action y method="POST" con FormSubmit -->
+    <form class="subscribe-form" action="https://formsubmit.co/migue030109@gmail.com" method="POST">
+        
+        <!-- Configuración opcional para evitar el captcha molesto -->
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_subject" value="¡Nuevo suscriptor en Pusheen Shop! 🐱">
+
+        <!-- 2. Agregamos name="email" -->
+        <input type="email" name="email" placeholder="Tu correo electrónico" required>
+
+        <!-- 3. Cambiamos type="button" por type="submit" -->
+        <button type="submit" class="btn-subscribe">Suscribirse</button>
+    </form>
+</div>
 
             
             <div class="footer-col links">
