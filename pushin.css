@@ -66,6 +66,77 @@ a {
     box-shadow: 0 10px 20px rgba(102, 91, 89, 0.15);
 }
 
+/* Contenedor principal para centrar la barra */
+.search-container {
+    max-width: 450px;
+    margin: 15px auto 25px;
+    padding: 0 15px;
+}
+
+/* El formulario estilo píldora/redondeado */
+.search-form {
+    display: flex;
+    align-items: center;
+    background-color: var(--mint-bg);
+    border: 2px solid transparent;
+    border-radius: 30px;
+    padding: 6px 8px 6px 20px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(102, 91, 89, 0.08);
+}
+
+/* Efecto al hacer clic para escribir (se vuelve blanca con borde y brillo rosa) */
+.search-form:focus-within {
+    background-color: var(--white-card);
+    border-color: var(--pink-tag);
+    box-shadow: 0 0 12px rgba(247, 180, 198, 0.6);
+}
+
+/* El campo de texto donde escribes */
+.search-input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    outline: none;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-brown);
+}
+
+.search-input::placeholder {
+    color: var(--text-brown);
+    opacity: 0.65;
+    font-weight: 500;
+}
+
+/* El botón circular de la lupa */
+.search-btn {
+    background-color: var(--pink-tag);
+    border: none;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Animación tierna cuando pasas el ratón por la lupa */
+.search-btn:hover {
+    background-color: #f39db4;
+    transform: scale(1.1) rotate(12deg);
+}
+
+
+
+
+
+
+
 .main-nav ul {
     display: flex;
     justify-content: center;
